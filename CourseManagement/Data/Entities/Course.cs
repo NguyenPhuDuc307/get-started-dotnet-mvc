@@ -1,6 +1,6 @@
 using System.ComponentModel.DataAnnotations;
 
-namespace MvcCourse.Data.Entities;
+namespace CourseManagement.Data.Entities;
 
 public class Course
 {

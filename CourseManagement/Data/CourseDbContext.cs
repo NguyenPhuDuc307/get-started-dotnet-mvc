@@ -1,7 +1,7 @@
 using Microsoft.EntityFrameworkCore;
-using MvcCourse.Data.Entities;
+using CourseManagement.Data.Entities;
 
-namespace MvcCourse.Data;
+namespace CourseManagement.Data;
 
 public class CourseDbContext : DbContext
 {

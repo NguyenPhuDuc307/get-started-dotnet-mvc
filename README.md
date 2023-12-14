@@ -29,10 +29,10 @@ If you do not have a development environment, you can refer to [Install .NET and
   run the following command:
 
   ```bash
-  dotnet new mvc -o MvcCourse
+  dotnet new mvc -o CourseManagement
   ```
 
-  The dotnet new command creates a new ASP.NET Core Mvc project in the MvcCourse folder.
+  The dotnet new command creates a new ASP.NET Core Mvc project in the CourseManagement folder.
 
   ![Tree Folder](resources/tree-folder.png)
 
@@ -67,7 +67,7 @@ If you do not have a development environment, you can refer to [Install .NET and
 
   ![Debug](resources/debug-vsc.png)
 
-  Choose **C#: MvcCourse [Default Configuration]**:
+  Choose **C#: CourseManagement [Default Configuration]**:
 
   ![Debug](resources/choose-debug.png)
 
@@ -85,7 +85,7 @@ If you do not have a development environment, you can refer to [Install .NET and
   ```c#
   using System.ComponentModel.DataAnnotations;
 
-  namespace MvcCourse.Data.Entities;
+  namespace CourseManagement.Data.Entities;
 
   public class Course
   {
@@ -116,7 +116,7 @@ If you do not have a development environment, you can refer to [Install .NET and
 
   >**Note** The version of the tool and package must be equal to the dotnet version. refer to [Create .NET apps faster with NuGet](https://www.nuget.org/)
 
-  Check the installed packages in `MvcCourse.csproj`
+  Check the installed packages in `CourseManagement.csproj`
 
 - **Add a database context**
 
@@ -126,9 +126,9 @@ If you do not have a development environment, you can refer to [Install .NET and
 
   ```c#
   using Microsoft.EntityFrameworkCore;
-  using MvcCourse.Data.Entities;
+  using CourseManagement.Data.Entities;
 
-  namespace MvcCourse.Data;
+  namespace CourseManagement.Data;
 
   public class CourseDbContext : DbContext
   {
@@ -156,7 +156,7 @@ If you do not have a development environment, you can refer to [Install .NET and
 
   ```c#
   using Microsoft.EntityFrameworkCore;
-  using MvcCourse.Data;
+  using CourseManagement.Data;
 
   var builder = WebApplication.CreateBuilder(args);
   builder.Services.AddDbContext<CourseDbContext>(options =>
@@ -194,7 +194,7 @@ If you do not have a development environment, you can refer to [Install .NET and
 
   ```json
   "ConnectionStrings": {
-    "CourseDbContext": "Server=localhost;Database=MvcCourse;User Id=sa;password=Password.1;Trusted_Connection=False;MultipleActiveResultSets=true;Encrypt=False"
+    "CourseDbContext": "Server=localhost;Database=CourseManagement;User Id=sa;password=Password.1;Trusted_Connection=False;MultipleActiveResultSets=true;Encrypt=False"
   }
   ```
 
@@ -213,7 +213,7 @@ export PATH=$HOME/.dotnet/tools:$PATH
 Run the following command:
 
 ```bash
-dotnet aspnet-codegenerator controller -name CoursesController -m Course -dc MvcCourse.Data.CourseDbContext --relativeFolderPath Controllers --useDefaultLayout --referenceScriptLibraries
+dotnet aspnet-codegenerator controller -name CoursesController -m Course -dc CourseManagement.Data.CourseDbContext --relativeFolderPath Controllers --useDefaultLayout --referenceScriptLibraries
 ```
 
 **Scaffolding creates the following:**
@@ -237,7 +237,7 @@ dotnet ef migrations add InitialCreate
 dotnet ef database update
 ```
   
-- `ef migrations add InitialCreate`: Generates a `Migrations/{timestamp}_InitialCreate.cs` migration file. The `InitialCreate` argument is the migration name. Any name can be used, but by convention, a name is selected that describes the migration. This is the first migration, so the generated class contains code to create the database schema. The database schema is based on the model specified in the `MvcCourseContext` class, in the `Data/MvcCourseContext.cs` file.
+- `ef migrations add InitialCreate`: Generates a `Migrations/{timestamp}_InitialCreate.cs` migration file. The `InitialCreate` argument is the migration name. Any name can be used, but by convention, a name is selected that describes the migration. This is the first migration, so the generated class contains code to create the database schema. The database schema is based on the model specified in the `CourseManagementContext` class, in the `Data/CourseManagementContext.cs` file.
 - `ef database update`: Updates the database to the latest migration, which the previous command created. This command runs the `Up` method in the `Migrations/{time-stamp}_InitialCreate.cs` file, which creates the database.
 
 **Run the application to test functions:**

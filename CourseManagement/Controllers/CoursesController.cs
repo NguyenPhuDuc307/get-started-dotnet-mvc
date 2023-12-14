@@ -5,10 +5,10 @@ using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
-using MvcCourse.Data;
-using MvcCourse.Data.Entities;
+using CourseManagement.Data;
+using CourseManagement.Data.Entities;
 
-namespace MvcCourse.Controllers
+namespace CourseManagement.Controllers
 {
     public class CoursesController : Controller
     {

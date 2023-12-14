@@ -1,5 +1,5 @@
 using Microsoft.EntityFrameworkCore;
-using MvcCourse.Data;
+using CourseManagement.Data;
 
 var builder = WebApplication.CreateBuilder(args);
 builder.Services.AddDbContext<CourseDbContext>(options =>
