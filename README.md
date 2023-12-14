@@ -200,87 +200,87 @@ If you do not have a development environment, you can refer to [Install .NET and
 
   You can change `Password.1` to another password you want.
 
-- **Scaffold course controller and pages**
+## Part 4: Scaffold course controller and pages
 
-  Open a command window in the project directory. The project directory is the directory that contains the `Program.cs` and `.csproj` files.
+Open a command window in the project directory. The project directory is the directory that contains the `Program.cs` and `.csproj` files.
 
-  On macOS and Linux, export the scaffold tool path:
+On macOS and Linux, export the scaffold tool path:
 
-  ```bash
-  export PATH=$HOME/.dotnet/tools:$PATH
-  ```
+```bash
+export PATH=$HOME/.dotnet/tools:$PATH
+```
 
-  Run the following command:
+Run the following command:
 
-  ```bash
-  dotnet aspnet-codegenerator controller -name CoursesController -m Course -dc MvcCourse.Data.CourseDbContext --relativeFolderPath Controllers --useDefaultLayout --referenceScriptLibraries
-  ```
+```bash
+dotnet aspnet-codegenerator controller -name CoursesController -m Course -dc MvcCourse.Data.CourseDbContext --relativeFolderPath Controllers --useDefaultLayout --referenceScriptLibraries
+```
 
-  Scaffolding creates the following:
+**Scaffolding creates the following:**
 
-  - A courses controller: `Controllers/CoursesController.cs`
-  - Razor view files for **Create**, **Delete**, **Details**, **Edit**, and **Index** pages: Views/Courses/*.cshtml
+- A courses controller: `Controllers/CoursesController.cs`
+- Razor view files for **Create**, **Delete**, **Details**, **Edit**, and **Index** pages: Views/Courses/*.cshtml
+
+The automatic creation of these files and file updates is known as scaffolding.
+
+**Initial migration:**
+
+Use the EF Core Migrations feature to create the database. Migrations is a set of tools that create and update a database to match the data model.
+
+Run the following .NET CLI commands:
+
+```bash
+dotnet ef migrations add InitialCreate
+```
+
+```bash
+dotnet ef database update
+```
   
-  The automatic creation of these files and file updates is known as scaffolding.
+- `ef migrations add InitialCreate`: Generates a `Migrations/{timestamp}_InitialCreate.cs` migration file. The `InitialCreate` argument is the migration name. Any name can be used, but by convention, a name is selected that describes the migration. This is the first migration, so the generated class contains code to create the database schema. The database schema is based on the model specified in the `MvcCourseContext` class, in the `Data/MvcCourseContext.cs` file.
+- `ef database update`: Updates the database to the latest migration, which the previous command created. This command runs the `Up` method in the `Migrations/{time-stamp}_InitialCreate.cs` file, which creates the database.
 
-- **Initial migration**
+**Run the application to test functions:**
 
-  Use the EF Core Migrations feature to create the database. Migrations is a set of tools that create and update a database to match the data model.
+Run the following command:
 
-  Run the following .NET CLI commands:
+```bash
+dotnet watch run
+```
 
-  ```bash
-  dotnet ef migrations add InitialCreate
+- Launches a browser.
+- Navigates to ```https://localhost:<port#>/Courses```
+
+  Page Index:
+
+  ![Index](resources/index.png)
+
+  Page Add:
+
+  ![Add](resources/create.png)
+
+  Page Details:
+
+  ![Details](resources/details.png)
+
+  Page Edit:
+
+  ![Edit](resources/edit.png)
+
+  Page Delete:
+
+  ![Delete](resources/delete.png)
+
+- Modify _Layout.cshtml in Views/Shared/Layout.cshtml:
+
+  Add the following code:
+
+  ```html
+  <li class="nav-item">
+      <a class="nav-link text-dark" asp-area="" asp-controller="Courses"
+          asp-action="Index">Courses</a>
+  </li>
   ```
-
-  ```bash
-  dotnet ef database update
-  ```
-  
-  - `ef migrations add InitialCreate`: Generates a `Migrations/{timestamp}_InitialCreate.cs` migration file. The `InitialCreate` argument is the migration name. Any name can be used, but by convention, a name is selected that describes the migration. This is the first migration, so the generated class contains code to create the database schema. The database schema is based on the model specified in the `MvcCourseContext` class, in the `Data/MvcCourseContext.cs` file.
-  - `ef database update`: Updates the database to the latest migration, which the previous command created. This command runs the `Up` method in the `Migrations/{time-stamp}_InitialCreate.cs` file, which creates the database.
-
-- **Run the application to test functions**
-
-  Run the following command:
-
-  ```bash
-  dotnet watch run
-  ```
-
-  - Launches a browser.
-  - Navigates to ```https://localhost:<port#>/Courses```
-
-    Page Index:
-
-    ![Index](resources/index.png)
-
-    Page Add:
-
-    ![Add](resources/create.png)
-
-    Page Details:
-
-    ![Details](resources/details.png)
-
-    Page Edit:
-
-    ![Edit](resources/edit.png)
-
-    Page Delete:
-
-    ![Delete](resources/delete.png)
-
-  - Modify _Layout.cshtml in Views/Shared/Layout.cshtml:
-
-    Add the following code:
-
-    ```html
-    <li class="nav-item">
-        <a class="nav-link text-dark" asp-area="" asp-controller="Courses"
-            asp-action="Index">Courses</a>
-    </li>
-    ```
 
 Above is the complete guide on get started with ASP.NET Core Mvc, Connect to SQL Server database to CRUD. Refer to [Get started with ASP.NET Core Mvc](https://learn.microsoft.com/en-us/aspnet/core/tutorials/first-mvc-app/start-mvc?view=aspnetcore-8.0&tabs=visual-studio-code) by `Microsoft`.
 
