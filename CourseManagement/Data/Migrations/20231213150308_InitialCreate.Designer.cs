@@ -9,7 +9,7 @@ using CourseManagement.Data;
 
 #nullable disable
 
-namespace CourseManagement.Migrations
+namespace CourseManagement.Data.Migrations
 {
     [DbContext(typeof(CourseDbContext))]
     [Migration("20231213150308_InitialCreate")]

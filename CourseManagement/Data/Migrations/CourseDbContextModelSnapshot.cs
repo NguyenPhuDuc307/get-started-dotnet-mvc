@@ -8,7 +8,7 @@ using CourseManagement.Data;
 
 #nullable disable
 
-namespace CourseManagement.Migrations
+namespace CourseManagement.Data.Migrations
 {
     [DbContext(typeof(CourseDbContext))]
     partial class CourseDbContextModelSnapshot : ModelSnapshot

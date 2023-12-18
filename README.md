@@ -230,7 +230,7 @@ Use the EF Core Migrations feature to create the database. Migrations is a set o
 Run the following .NET CLI commands:
 
 ```bash
-dotnet ef migrations add InitialCreate
+dotnet ef migrations add InitialCreate -o Data/Migrations
 ```
 
 ```bash
