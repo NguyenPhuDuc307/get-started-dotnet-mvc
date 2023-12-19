@@ -9,7 +9,7 @@ At the end of the series, you'll have an app that manages and displays course da
 - [x] Work with a database.
 - [x] Implement CRUD.
 
-If you do not have a development environment, you can refer to [Install .NET and SQL Server environment in Visual Studio Code](https://github.com/NguyenPhuDuc307/install-dotnet-sql-server).
+If you do not have a development environment, you can refer to [Part 1: Install .NET and SQL Server environment in Visual Studio Code](https://github.com/NguyenPhuDuc307/install-dotnet-sql-server).
 
 ## Install .NET
 
@@ -284,4 +284,4 @@ dotnet watch run
 
 Above is the complete guide on get started with ASP.NET Core Mvc, Connect to SQL Server database to CRUD. Refer to [Get started with ASP.NET Core Mvc](https://learn.microsoft.com/en-us/aspnet/core/tutorials/first-mvc-app/start-mvc?view=aspnetcore-8.0&tabs=visual-studio-code) by `Microsoft`.
 
-Next let's [Add a new field and add validation to an ASP.NET Core Mvc app](https://github.com/NguyenPhuDuc307/add-field-and-validation).
+Next let's [Part 3: Add a new field and add validation to an ASP.NET Core Mvc app](https://github.com/NguyenPhuDuc307/add-field-and-validation).
