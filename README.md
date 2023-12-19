@@ -1,4 +1,4 @@
-# Get started with ASP.NET Core Mvc, Connect to SQL Server database to CRUD
+# Part 2: Get started with ASP.NET Core Mvc, Connect to SQL Server database to CRUD
 
 >This tutorial teaches ASP.NET Core Mvc web development with models, controllers, and views. Initialize an Mvc app and connect to SQL Server database to CRUD. This guide is compiled based on [Get started with ASP.NET Core Mvc](https://learn.microsoft.com/en-us/aspnet/core/tutorials/first-mvc-app/start-mvc?view=aspnetcore-8.0&tabs=visual-studio-code) by `Microsoft`.
 
@@ -11,7 +11,7 @@ At the end of the series, you'll have an app that manages and displays course da
 
 If you do not have a development environment, you can refer to [Install .NET and SQL Server environment in Visual Studio Code](https://github.com/NguyenPhuDuc307/install-dotnet-sql-server).
 
-## Part 1: Install .NET
+## Install .NET
 
 - **Step 1: Download and install [.NET SDK](https://dotnet.microsoft.com/en-us/download).**
   Prioritize choosing a stable version with `long-term support`.
@@ -23,7 +23,7 @@ If you do not have a development environment, you can refer to [Install .NET and
   dotnet --version
   ```
 
-## Part 2: Create and run a web app
+## Create and run a web app
 
 - **Initialize the .NET Mvc project**
   run the following command:
@@ -71,7 +71,7 @@ If you do not have a development environment, you can refer to [Install .NET and
 
   ![Debug](resources/choose-debug.png)
 
-## Part 3: Add a model to an ASP.NET Core Mvc app
+## Add a model to an ASP.NET Core Mvc app
 
 >In this tutorial, classes are added for managing courses in a database. These classes are the "Model" part of the Mvc app.
 >These model classes are used with [Entity Framework Core (EF Core)](https://learn.microsoft.com/en-us/ef/core) to work with a database. EF Core is an object-relational mapping (ORM) framework that simplifies the data access code that you have to write.
@@ -200,7 +200,7 @@ If you do not have a development environment, you can refer to [Install .NET and
 
   You can change `Password.1` to another password you want.
 
-## Part 4: Scaffold course controller and pages
+## Scaffold course controller and pages
 
 Open a command window in the project directory. The project directory is the directory that contains the `Program.cs` and `.csproj` files.
 
